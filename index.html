@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoebus Technology Company Limited</title>
+    <style>
+        :root {
+            --phoebus-blue: #3A6D99;
+            --phoebus-grey: #A5A5A5;
+            --accent-color: #5F88A5;
+            --dark-blue: #1C3B60;
+            --white: #ffffff;
+            --light-bg: #F9F9F9;
+            --content-width: min(90%, 1200px);
+        }
+
+        body {
+            font-family: 'Lato', system-ui, sans-serif;
+            margin: 0;
+            color: var(--dark-blue);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: clamp(50px, 5vw, 70px);
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(28,59,96,0.75), rgba(28,59,96,0.75)), 
+                        url('image/oilfield-bg1.jpg') center/cover;
+            color: white;
+            padding: clamp(6rem, 10vw, 8rem) 1rem;
+            text-align: center;
+            animation: bgImageRotation 20s infinite;
+            background-size: cover;
+        }
+
+        @keyframes bgImageRotation {
+            0% { background-image: url('image/oilfield-bg1.jpg'); }
+            25% { background-image: url('image/oilfield-bg2.jpg'); }
+            50% { background-image: url('image/oilfield-bg3.jpg'); }
+            75% { background-image: url('image/oilfield-bg4.jpg'); }
+            100% { background-image: url('image/oilfield-bg1.jpg'); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-section {
+            background: var(--light-bg);
+            padding: 4rem 0;
+        }
+
+        .info-section h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .info-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: var(--content-width);
+            margin: 0 auto;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid var(--phoebus-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-box h3 {
+            font-size: 1.4rem;
+            color: var(--phoebus-blue);
+            margin: 1.5rem 0;
+        }
+
+        .info-box p {
+            font-size: 1rem;
+            color: var(--dark-blue);
+            line-height: 1.8;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .partners-section {
+            padding: 4rem 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 15px;
+            flex-shrink: 0;
+        }
+
+        .partner-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        footer {
+          background: var(--dark-blue);
+          color: var(--white);
+          padding: 3rem 0;
+          font-size: 0.9rem;
+          border-top: 4px solid var(--accent-color);
+        }
+
+        .footer-content {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: right;
+        }
+
+        .company-name {
+          font-size: 0.9rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          opacity: 0.9;
+        }
+
+        .contact-details {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .contact-line {
+            line-height: 1.6;
+        }
+
+        .contact-label {
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        .email-link {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .email-link:hover {
+            opacity: 0.8;
+        }
+
+        .copyright-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image/phoebus_logo.png" alt="Phoebus Technology Logo" class="logo">
+        <nav>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Empowering Technology Solutions for the Modern Industry</h1>
+            <p>Driving Innovation in Oilfield Technology Since 2017</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>Our Strategic Framework</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>Vision</h3>
+                <p>Innovating oilfield technology through advanced services that optimize reservoir performance and well integrity.</p>
+            </div>
+            <div class="info-box">
+                <h3>Mission</h3>
+                <p>Delivering integrated solutions that enhance the value of oilfield projects, improve sustainability, and reduce costs through cutting-edge technology.</p>
+            </div>
+            <div class="info-box">
+                <h3>Values</h3>
+                <p>Commitment to quality • Innovation in services • Integrity in operations • Client-focused solutions • Sustainability in action.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="partners-section">
+        <h2>Our Trusted Customers and Partners</h2>
+        <div class="partner-logos">
+            <div class="partner-logo"><img src="image/PetroChina.png" alt="PetroChina"></div>
+            <div class="partner-logo"><img src="image/SinoPEC.png" alt="SinoPEC"></div>
+            <div class="partner-logo"><img src="image/CNOOC.png" alt="CNOOC"></div>
+            <div class="partner-logo"><img src="image/SLB.png" alt="SLB"></div>
+            <div class="partner-logo"><img src="image/BakerHuges.png" alt="BakerHuges"></div>
+            <div class="partner-logo"><img src="image/Halliburton.png" alt="Halliburton"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="company-info">
+                <div class="company-name">Phoebus Technology Company Limited</div>
+                <div class="contact-details">
+                    <div class="contact-line">
+                        <span class="contact-label">Address:</span> 
+                        Flat D, 7/F, Shing Lee Commercial Building, 8 Wing Kut Street, Central, Hong Kong
+                    </div>
+                    <div class="contact-line">
+                        <span class="contact-label">Tel:</span> +852-2683-2613
+                    </div>
+                    <div class="contact-line">
+                        <span class="contact-label">Email:</span> 
+                        <a href="mailto:wang.chuan@phoebus.com.hk" class="email-link">wang.chuan@phoebus.com.hk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-section">
+                © 2025 Phoebus Technology Company Limited
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
